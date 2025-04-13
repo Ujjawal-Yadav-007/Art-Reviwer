@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 dotenv.config();
-const uri = `mongodb+srv://${process.env.username}:${process.env.password}@cluster0.81joa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+const uri = `mongodb+srv://ujjawaly59:tp3qDVpTBmAIhNNN@cluster0.bwv9n.mongodb.net/?appName=Cluster0`;
 
 const dbConnect = () => {
       mongoose.connect(uri).then(() => {

@@ -7,6 +7,7 @@ import createReview from '../api/review.js';
 import { refreshToken } from '../security/security.js';
 import Authentication from '../api/authentication.js';
 import { logout } from '../api/logout.js';
+import { deleteAllAccounts } from '../api/delete.js';
 
 
 
@@ -24,7 +25,11 @@ const rateLimiter2 = rateLimit({
     message: 'Too many requests, please try again later.'
 })
 
-router.post('/signin', rateLimiter,express.json({ limit: '1kb'}), signin);
+
+router.delete('/delete-accounts', deleteAllAccounts);
+
+
+router.post('/signin', signin);
 router.post('/signup', rateLimiter,express.json({ limit: '1kb'}), signup);
 router.post('/post',rateLimiter2, express.json({ limit: '50mb'}), createPost);
 router.post('/review',rateLimiter2,express.json({ limit: '1mb'}), createReview);
